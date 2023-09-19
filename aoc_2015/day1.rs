@@ -1,3 +1,7 @@
-use std::io::Write;
+use std::io;
 
-let puzzle_in = std::io::stdout().write("Puzzle Input : ")
+fn main() {
+    let mut puzzle_in = String::new();
+    io::stdin().read_line(&mut puzzle_in).expect("failed to get input");
+    println!("{}",puzzle_in);
+}
