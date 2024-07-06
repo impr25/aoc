@@ -1,8 +1,10 @@
 {
     "rust-analyzer.linkedProjects": [
         "./aoc_2015/day01/Cargo.toml",
-        "./aoc_2015/day02/Cargo.toml"
+        "./aoc_2015/day02/Cargo.toml",
+        "./aoc_2015/day03/Cargo.toml"
     ],
-    "editor.inlayHints.enabled": "offUnlessPressed"
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 
 }
