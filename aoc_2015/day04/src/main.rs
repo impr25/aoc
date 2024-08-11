@@ -13,7 +13,7 @@ fn main() {
 
     for line in content.split('\n'){
         let mut i:u64 = 0;
-        while true{
+        loop {
             let mut code: String = line.trim().to_owned();
             code.push_str(&i.to_string());
             // println!("{}",code);
