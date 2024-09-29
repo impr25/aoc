@@ -48,7 +48,7 @@ fn restricted_set_check(str_b: &str) -> bool{
 
 fn part2_check1(str_b: &str) -> bool{
 
-    for (ind,char) in str_b.chars().enumerate() {
+    for (ind,_) in str_b.chars().enumerate() {
         if ind == str_b.len()-2{
             break;
         }
