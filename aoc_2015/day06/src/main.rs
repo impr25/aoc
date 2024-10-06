@@ -129,7 +129,11 @@ fn main() {
 
     let contents: String = fs::read_to_string(file_path).expect("file not found");
 
-    // part1(contents);
-    part2(contents);
-    
+    let part: u8 = 1;
+    if part==1{
+        part1(contents);
+    }
+    else {
+        part2(contents);
+    }
 }
