@@ -7,7 +7,8 @@
         "./aoc_2015/day05/Cargo.toml",
         "./aoc_2015/day06/Cargo.toml",
         "./aoc_2015/day07/Cargo.toml",
-        "./aoc_2015/day08/Cargo.toml"
+        "./aoc_2015/day08/Cargo.toml",
+        "./aoc_2015/day09/Cargo.toml"
     ],
     "editor.inlayHints.enabled": "offUnlessPressed",
     "terminal.integrated.defaultProfile.windows": "Git Bash"
