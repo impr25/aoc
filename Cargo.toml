@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = [
+    "aoc_2015/day01",
+    "aoc_2015/day02",
+    "aoc_2015/day03",
+    "aoc_2015/day04",
+    "aoc_2015/day05",
+    "aoc_2015/day06",
+    "aoc_2015/day07",
+    "aoc_2015/day08",
+    "aoc_2015/day09",
+    "aoc_2015/day10",
+    "aoc_2015/day11",
+    "aoc_2024/day01"
+]

@@ -1,16 +1,6 @@
 {
-    "rust-analyzer.linkedProjects": [
-        "./aoc_2015/day01/Cargo.toml",
-        "./aoc_2015/day02/Cargo.toml",
-        "./aoc_2015/day03/Cargo.toml",
-        "./aoc_2015/day04/Cargo.toml",
-        "./aoc_2015/day05/Cargo.toml",
-        "./aoc_2015/day06/Cargo.toml",
-        "./aoc_2015/day07/Cargo.toml",
-        "./aoc_2015/day08/Cargo.toml",
-        "./aoc_2015/day09/Cargo.toml"
-    ],
     "editor.inlayHints.enabled": "offUnlessPressed",
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "rust-analyzer.completion.autoimport.enable": false
 
 }
