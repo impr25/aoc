@@ -2,6 +2,8 @@ mod aoc_2015;
 mod aoc_2024;
 
 use std::env;
+use std::fs;
+use std::path::Path;
 use std::process;
 
 fn main() {
@@ -16,37 +18,42 @@ fn main() {
     let day = &args[2];
     let mode = if args.len() > 3 { &args[3] } else { "test" };
 
+    // Validate day
+    let day_num = match day.parse::<u32>() {
+        Ok(n) => n,
+        Err(_) => {
+            println!("invalid day");
+            return;
+        }
+    };
+
+    if day_num < 1 || day_num > 25 {
+        println!("invalid day");
+        return;
+    }
+
     // Pad day with leading zero if needed
-    let day_padded = if day.len() == 1 {
-        format!("0{}", day)
+    let day_padded = if day_num < 10 {
+        format!("{:02}", day_num)
     } else {
-        day.to_string()
+        day_num.to_string()
     };
 
     let file_path = format!("src/aoc_{}/day{}/{}.txt", year, day_padded, mode);
+    let dir_path = format!("src/aoc_{}/day{}", year, day_padded);
 
-    println!("Running Year: {}, Day: {}, Mode: {}", year, day, mode);
+    // Check if directory exists
+    if !Path::new(&dir_path).exists() {
+        println!("waiting for the solution");
+        return;
+    }
+
+    println!("Running Year: {}, Day: {}, Mode: {}", year, day_num, mode);
     println!("Input file: {}", file_path);
 
     match year.as_str() {
-        "2015" => match day_padded.as_str() {
-            "01" => aoc_2015::day01::run(&file_path),
-            "02" => aoc_2015::day02::run(&file_path),
-            "03" => aoc_2015::day03::run(&file_path),
-            "04" => aoc_2015::day04::run(&file_path),
-            "05" => aoc_2015::day05::run(&file_path),
-            "06" => aoc_2015::day06::run(&file_path),
-            "07" => aoc_2015::day07::run(&file_path),
-            "08" => aoc_2015::day08::run(&file_path),
-            "09" => aoc_2015::day09::run(&file_path),
-            "10" => aoc_2015::day10::run(&file_path),
-            "11" => aoc_2015::day11::run(&file_path),
-            _ => eprintln!("Day {} not implemented for 2015", day),
-        },
-        "2024" => match day_padded.as_str() {
-            "01" => aoc_2024::day01::run(&file_path),
-            _ => eprintln!("Day {} not implemented for 2024", day),
-        },
+        "2015" => aoc_2015::run(&day_padded, &file_path),
+        "2024" => aoc_2024::run(&day_padded, &file_path),
         _ => eprintln!("Year {} not implemented", year),
     }
 }
